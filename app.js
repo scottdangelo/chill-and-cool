@@ -2,14 +2,9 @@ const express = require("express");
 
 const app = express();
 
-/*
-app.get("/", function (req, res) {
-  //    res.send("Server is up and running")
-  res.sendFile(__dirname + "/index.html");
-});
-*/
-
 app.use(express.static('../Dylan-website'))
-app.listen(3000, function () {
-  console.log("Server is running on port 3000");
+
+const port = process.env.PORT || 5000;
+app.listen(port, () => {
+    console.log(`Server started on port ${port}`);
 });
